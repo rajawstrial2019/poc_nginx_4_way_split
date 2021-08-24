@@ -1,0 +1,213 @@
+{
+	"info": {
+		"name": "4Way Split Demo",
+		"_postman_id": "09be5f2b-f520-4b30-b04d-860a115c6f01",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Box Auth - Direct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer box_tenant=23232"
+					},
+					{
+						"key": "nonce",
+						"value": "100"
+					},
+					{
+						"key": "X-Original-URI",
+						"value": "/box/notification"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9981/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9981",
+					"path": [
+						"auth",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Office Auth - Direct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "nonce",
+						"value": "200"
+					},
+					{
+						"key": "X-Original-URI",
+						"value": "/office/notification"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer office_tenant=ACME-Office-3434"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9982/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9982",
+					"path": [
+						"auth",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Box App - Direct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "nonce",
+						"value": "100"
+					},
+					{
+						"key": "X-Original-URI",
+						"value": "/box/notification"
+					},
+					{
+						"key": "X-CASB-TENANT",
+						"value": "ACME-Box-1212"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9991/box/notification/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9991",
+					"path": [
+						"box",
+						"notification",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Office App - Direct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "nonce",
+						"value": "100"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9992/office/notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9992",
+					"path": [
+						"office",
+						"notification"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Box Via NGINX",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer box_tenant=ACME-Box-2323"
+					},
+					{
+						"key": "nonce",
+						"value": "Demo - End to End "
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://box-notify.casb.protect.broadcom.com/box/notification/",
+					"protocol": "http",
+					"host": [
+						"box-notify",
+						"casb",
+						"protect",
+						"broadcom",
+						"com"
+					],
+					"path": [
+						"box",
+						"notification",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Office Via NGINX",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer office_tenant=1233435"
+					},
+					{
+						"key": "nonce",
+						"value": "Demo - End to End "
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://office-notify.casb.protect.broadcom.com/office/notification/",
+					"protocol": "http",
+					"host": [
+						"office-notify",
+						"casb",
+						"protect",
+						"broadcom",
+						"com"
+					],
+					"path": [
+						"office",
+						"notification",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
