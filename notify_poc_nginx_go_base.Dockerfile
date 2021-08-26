@@ -36,7 +36,19 @@ RUN apt-get install -y libpcre3-dev
 RUN apt-get install -y libssl-dev
 
 #RUN ./configure --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid --with-http_ssl_module
-RUN ./configure --prefix=/usr/local/nginx --with-http_auth_request_module --with-http_ssl_module --with-http_stub_status_module
+RUN ./configure --prefix=/usr/local/nginx \
+            --sbin-path=/usr/sbin/nginx \
+            --modules-path=/usr/lib/nginx/modules \
+            --conf-path=/etc/nginx/nginx.conf \
+            --error-log-path=/var/log/nginx/error.log \
+            --http-log-path=/var/log/nginx/access.log \
+            --pid-path=/run/nginx.pid \
+            --lock-path=/var/lock/nginx.lock \
+            --with-ipv6 \
+            --with-http_auth_request_module \
+            --with-http_realip_module \
+            --with-http_ssl_module \
+            --with-http_stub_status_module
 RUN make
 RUN make install
 
