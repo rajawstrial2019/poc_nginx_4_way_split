@@ -39,6 +39,14 @@ func main() {
 		fmt.Fprintf(w, "- Current Time is: %s.", currentTime.Format("01-02-2006 15:04:05"))
 	})
 
+	//Health Check endpoint
+	http.HandleFunc("/api/admin/v1/api-status/", func(w http.ResponseWriter, r *http.Request) {
+		log.Print("BOX - HEALTH CHECK - Got request.")
+		currentTime := time.Now()
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintf(w, "Health check response at %s.", currentTime.Format("01-02-2006 15:04:05"))
+	})
+	
 	http.HandleFunc("/auth/", func(w http.ResponseWriter, r *http.Request) {
 		log.Print("AUTH - Got request.")
 
