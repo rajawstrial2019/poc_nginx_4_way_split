@@ -7,13 +7,13 @@ cd /usr/local/nginx/sbin/
 cd /casb_poc/go-app/box_auth_server
 ./boxauthserver &
 
-cd /casb_poc/go-app/office_auth_server
-./officeauthserver &
+cd /casb_poc/go-app/gapps
+./gappsauthserver &
 
 cd /casb_poc/go-app/box_app_server
 ./boxappserver &
 
-cd /casb_poc/go-app/office_app_server
-./officeappserver &
+cd /casb_poc/go-app/gapps_app_server
+./gappsappserver &
 
 /bin/bash

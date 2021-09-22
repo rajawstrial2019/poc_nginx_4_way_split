@@ -40,6 +40,7 @@ root@c651c3c87bcd:/nginx-1.20.1# C02W3473Hbuild . -f notify_poc_nginx_go_auth.Do
 Add these to /etc/hosts file on your dev machine
 127.0.0.1        box-notify.casb.protect.broadcom.com
 127.0.0.1        office-notify.casb.protect.broadcom.com
+127.0.0.1        gapps-notify.casb.protect.broadcom.com
 
 docker build . -f notify_poc_nginx_go_base.Dockerfile -t notify_poc_nginx_go_base
 
@@ -63,7 +64,7 @@ Demo
 - Nginx Box Endpoint
  - Without Authorization Error - Nginx
  - Box Valid Request 
- - Office Valid Request
+ - Gapps Valid Request
 
 
 

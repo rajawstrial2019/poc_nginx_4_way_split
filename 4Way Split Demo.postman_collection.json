@@ -42,7 +42,7 @@
 			"response": []
 		},
 		{
-			"name": "Office Auth - Direct",
+			"name": "Gapps Auth - Direct",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -52,11 +52,11 @@
 					},
 					{
 						"key": "X-Original-URI",
-						"value": "/office/notification"
+						"value": "/gapps/notification"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer office_tenant=ACME-Office-3434"
+						"value": "Bearer gapps_tenant=ACME-Gapps-3434"
 					}
 				],
 				"body": {},
@@ -113,7 +113,7 @@
 			"response": []
 		},
 		{
-			"name": "Office App - Direct",
+			"name": "Gapps App - Direct",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -124,14 +124,14 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:9992/office/notification",
+					"raw": "http://localhost:9992/gapps/notification",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9992",
 					"path": [
-						"office",
+						"gapps",
 						"notification"
 					]
 				},
@@ -175,13 +175,13 @@
 			"response": []
 		},
 		{
-			"name": "Office Via NGINX",
+			"name": "gapps Via NGINX",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer office_tenant=1233435"
+						"value": "Bearer gapps_tenant=1233435"
 					},
 					{
 						"key": "nonce",
@@ -190,17 +190,17 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://office-notify.casb.protect.broadcom.com/office/notification/",
+					"raw": "http://gapps-notify.casb.protect.broadcom.com/gapps/notification/",
 					"protocol": "http",
 					"host": [
-						"office-notify",
+						"gapps-notify",
 						"casb",
 						"protect",
 						"broadcom",
 						"com"
 					],
 					"path": [
-						"office",
+						"gapps",
 						"notification",
 						""
 					]

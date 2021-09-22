@@ -15,10 +15,10 @@ WORKDIR /casb_poc/go-app/box_app_server
 COPY appserver/boxappserver.go boxappserver.go
 RUN . ~/.profile; go build boxappserver.go;
 
-WORKDIR /casb_poc/go-app/office_app_server
+WORKDIR /casb_poc/go-app/gapps_app_server
 
-COPY appserver/officeappserver.go officeappserver.go
-RUN . ~/.profile; go build officeappserver.go;
+COPY appserver/gappsappserver.go gappsappserver.go
+RUN . ~/.profile; go build gappsappserver.go;
 
 ############################################
 # Build GO - Auth Web
@@ -28,10 +28,11 @@ WORKDIR /casb_poc/go-app/box_auth_server
 COPY authserver/boxauthserver.go boxauthserver.go
 RUN . ~/.profile; go build boxauthserver.go;
 
-WORKDIR /casb_poc/go-app/office_auth_server
+WORKDIR /casb_poc/go-app/gapps
 
-COPY authserver/officeauthserver.go officeauthserver.go
-RUN . ~/.profile; go build officeauthserver.go;
+COPY gapps .
+RUN . ~/.profile; go build httpd/gappsauthserver.go;
+
 
 RUN mkdir -p /var/log/casb/
 
